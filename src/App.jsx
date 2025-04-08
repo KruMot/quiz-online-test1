@@ -1,7 +1,8 @@
+// quiz_auto_grader/app.jsx
 import React, { useState, useEffect } from "react";
 import questionsData from "./data/questions";
 
-const TOTAL_TIME = 120; // ปรับเวลาที่นี่ได้เลย
+const TOTAL_TIME = 10;
 
 function shuffleArray(array) {
   const newArr = [...array];
@@ -66,9 +67,11 @@ export default function App() {
     }
   }, [submittedName, submitted, timeLeft]);
 
+  const wrapperClass = "p-4 sm:p-8 w-full max-w-screen-md mx-auto";
+
   if (!submittedName) {
     return (
-      <div className="p-4 sm:p-6 w-full max-w-screen-sm mx-auto">
+      <div className={wrapperClass}>
         <h1 className="text-lg sm:text-xl font-bold mb-4 break-words">กรุณากรอกข้อมูลเพื่อนเริ่มทำข้อสอบ</h1>
         <input type="text" placeholder="ชื่อ" value={name} onChange={(e) => setName(e.target.value)} className="border rounded p-2 w-full mb-2" />
         <input type="text" placeholder="นามสกุล" value={surname} onChange={(e) => setSurname(e.target.value)} className="border rounded p-2 w-full mb-2" />
@@ -83,7 +86,7 @@ export default function App() {
 
   if (submitted) {
     return (
-      <div className="p-4 sm:p-6 w-full max-w-screen-sm mx-auto">
+      <div className={wrapperClass}>
         <h1 className="text-xl font-bold mb-4">ผลคะแนนของคุณ</h1>
         <p className="text-base">ชื่อ: {name} {surname}</p>
         <p className="text-base">เลขที่: {studentNo} ห้อง: {room}</p>
@@ -96,21 +99,22 @@ export default function App() {
   const progressPercent = (timeLeft / TOTAL_TIME) * 100;
 
   return (
-    <div className="p-4 sm:p-6 w-full max-w-screen-sm mx-auto">
+    <div className={wrapperClass}>
       <h1 className="text-lg sm:text-xl font-bold mb-4 break-words">แบบทดสอบสำหรับ {name} {surname}</h1>
       <p className="mb-2 text-sm sm:text-base">เลขที่: {studentNo} ห้อง: {room}</p>
-      <div className="mb-2">
+      <div className="mb-4">
         <p className="text-red-500 font-semibold text-sm sm:text-base">เวลาที่เหลือ: {timeLeft} วินาที</p>
         <div className="w-full h-3 sm:h-4 bg-gray-200 rounded-full mt-1">
           <div className="h-3 sm:h-4 bg-red-500 rounded-full transition-all duration-500" style={{ width: `${progressPercent}%` }} />
         </div>
       </div>
       {questions.map((q) => (
-        <div key={q.id} className="mb-4">
-          <p className="font-medium text-sm sm:text-base break-words">{q.question}</p>
+        <div key={q.id} className="mb-6">
+          <p className="font-medium text-sm sm:text-base break-words mb-2">{q.question}</p>
           {q.options.map((opt) => (
-            <label key={opt} className="block text-sm sm:text-base">
-              <input type="radio" name={`q-${q.id}`} value={opt} onChange={() => handleAnswer(q.id, opt)} checked={answers[q.id] === opt} /> {opt}
+            <label key={opt} className="block text-sm sm:text-base mb-1">
+              <input type="radio" name={`q-${q.id}`} value={opt} onChange={() => handleAnswer(q.id, opt)} checked={answers[q.id] === opt} className="mr-2" />
+              {opt}
             </label>
           ))}
         </div>
