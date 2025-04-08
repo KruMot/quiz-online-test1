@@ -29,6 +29,12 @@ const questions = [
     options: ["1", "2", "3", "4"],
     answer: "4",
   },
+   {
+    id: 6,
+    question: "ข้อที่เท่าไหร่?",
+    options: ["7", "6", "3", "4"],
+    answer: "6",
+  },
 ];
 
 export default questions;
