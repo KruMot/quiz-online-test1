@@ -25,7 +25,7 @@ const questions = [
   },
   {
     id: 5,
-    question: "แมวมีกี่สี?",
+    question: "แมวมีกี่สีกกกกกกกกกก?",
     options: ["1", "2", "3", "4"],
     answer: "4",
   },
