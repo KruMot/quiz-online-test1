@@ -87,7 +87,7 @@ export default function App() {
   if (submitted) {
     return (
       <div className={wrapperClass}>
-        <h1 className="text-xl font-bold mb-4">ผลคะแนนของคุณ</h1>
+        <h1 className="text-xl font-bold mb-4">ผลคะแนนแบบทดสอบ เรื่อง การสืบพันธุ์ของพืชดอก</h1>
         <p className="text-base">ชื่อ: {name} {surname}</p>
         <p className="text-base">เลขที่: {studentNo} ห้อง: {room}</p>
         <p className="text-base">คะแนน: {score} / {questions.length}</p>
