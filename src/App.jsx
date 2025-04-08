@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import questionsData from "./data/questions";
 
-const TOTAL_TIME = 10; // ปรับเวลาที่นี่ได้เลย
+const TOTAL_TIME = 120; // ปรับเวลาที่นี่ได้เลย
 
 function shuffleArray(array) {
   const newArr = [...array];
