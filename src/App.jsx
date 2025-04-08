@@ -72,7 +72,7 @@ export default function App() {
   if (!submittedName) {
     return (
       <div className={wrapperClass}>
-        <h1 className="text-lg sm:text-xl font-bold mb-4 break-words">กรุณากรอกข้อมูลเพื่อนเริ่มทำข้อสอบ</h1>
+        <h1 className="text-lg sm:text-xl font-bold mb-4 break-words">กรุณากรอกข้อมูลเพื่อเริ่มทำข้อสอบ</h1>
         <input type="text" placeholder="ชื่อ" value={name} onChange={(e) => setName(e.target.value)} className="border rounded p-2 w-full mb-2" />
         <input type="text" placeholder="นามสกุล" value={surname} onChange={(e) => setSurname(e.target.value)} className="border rounded p-2 w-full mb-2" />
         <input type="text" placeholder="เลขที่" value={studentNo} onChange={(e) => setStudentNo(e.target.value)} className="border rounded p-2 w-full mb-2" />
