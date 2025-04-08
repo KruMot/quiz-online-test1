@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import questionsData from "../src/data/questions";
+import questionsData from "./data/questions";
 // ...
 
 // (โค้ด App.jsx ทั้งหมดตามที่แก้ไว้จะใส่ในนี้)
